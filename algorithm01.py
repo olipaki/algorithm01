@@ -11,15 +11,15 @@
 
 
 
-from collections import deque :
+from collections import deque 
 N , K = 7, 3
 # N=7, K=3 이라고 가정
-people = deque(range(1, n + 1))# [1, 2, 3, 4, 5, 6, 7]
+people = deque(range(1, N + 1))# [1, 2, 3, 4, 5, 6, 7]
 result = []                    # 제거된 사람을 담을 접시
 
 # K번째 사람을 찾아서 제거하기 (핵심 로직)
 while people:
-    for _ in range(K - 1) # 1. (K-1)명은 뒤로 보내기 (넘기기)
+    for _ in range(K - 1) : # 1. (K-1)명은 뒤로 보내기 (넘기기)
         front_person = people.popleft()  # 맨 앞사람 나와!
         people.append(front_person)      # 뒤로 가서 서!
     # 이제 맨 앞에 온 K번째 사람을 제거 (빼기)
@@ -27,7 +27,7 @@ while people:
     result.append(removed)        # 접시에 담기
     # 마지막 : 결과 출력하기 (마무리)
     # 숫자를 문자로 바꿔서 쉼표로 연결하기
-    print("<" + "," .join(map(str, result))+ ">")
+print("<" + "," .join(map(str, result))+ ">")
 
 
 
